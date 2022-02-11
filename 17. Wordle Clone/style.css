@@ -1,0 +1,206 @@
+/*=============== GOOGLE FONTS ===============*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+/*=============== VARIABLES CSS ===============*/
+
+:root {
+    /*========== Colors ==========*/
+    --first-color: hsl(232, 54%, 43%);
+    --text-color: hsl(232, 8%, 35%);
+    --white-color: hsl(232, 100%, 99%);
+    --body-color: hsl(232, 45%, 90%);
+    --container-color: hsl(232, 54%, 11%);
+}
+
+
+/*=============== INPUT PASSWORD ===============*/
+
+* {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    background-color: var(--body-color);
+}
+
+.input {
+    position: relative;
+    background-color: var(--container-color);
+    padding: 1.35rem 1.25rem;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    column-gap: 0.75rem;
+}
+
+.input__lock,
+.input__icon {
+    font-size: 1.25rem;
+    z-index: 1;
+}
+
+.input__lock,
+.input__field {
+    color: #000;
+}
+
+.input__icon {
+    color: var(--first-color);
+    cursor: pointer;
+}
+
+.input__field {
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    z-index: 1;
+    padding: 1.35rem 1.25rem;
+    border: 2px solid var(--container-color);
+    text-align: center;
+}
+
+.input__field::placeholder {
+    color: #000;
+}
+
+.input__overlay {
+    width: 32px;
+    height: 32px;
+    background-color: var(--white-color);
+    position: absolute;
+    right: 0.9rem;
+    border-radius: 50%;
+    z-index: 0;
+    transition: 0.4s ease-in-out;
+}
+
+
+/* Transition effect */
+
+.overlay-content {
+    width: 100%;
+    height: 100%;
+    border-radius: 0.5rem;
+    right: 0;
+}
+
+.overlay-content~.input__lock {
+    color: var(--container-color);
+}
+
+.overlay-content~.input__field,
+.overlay-content~.input__field::placeholder {
+    color: var(--text-color);
+}
+
+#input_btn {
+    display: block;
+    width: 100%;
+    padding: 1.35rem 1.25rem;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    background: var(--container-color);
+    border-color: transparent;
+    margin-top: 30px;
+}
+
+table {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    margin: 0;
+    width: auto;
+    padding: 1.35rem 1.25rem;
+}
+
+table caption {
+    font-size: 1.5em;
+    margin: 0.5em 0 0.75em;
+}
+
+table tr {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    padding: 0.35em;
+}
+
+table th,
+table td {
+    text-align: center;
+    padding: 1.35rem 10.25rem;
+    background: var(--container-color);
+    color: #fff;
+    font-size: 14px;
+}
+
+table th {
+    font-size: 0.85em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+@media screen and (max-width: 600px) {
+    table {
+        border: 0;
+    }
+    table caption {
+        font-size: 1.3em;
+    }
+    table thead {
+        border: none;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+    }
+    table tr {
+        border-bottom: 3px solid #ddd;
+        display: block;
+        margin-bottom: 0.625em;
+    }
+    table td {
+        border-bottom: 1px solid #ddd;
+        display: block;
+        font-size: 0.8em;
+        text-align: right;
+    }
+    table td::before {
+        /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);
+    */
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    table td:last-child {
+        border-bottom: 0;
+    }
+}
+
+span.correct {
+    color: rgb(0, 255, 55);
+}
+
+span.indexed {
+    color: rgb(255, 238, 0);
+}
+
+h2 {
+    color: red;
+}
+
+h1 {
+    color: orange;
+}
